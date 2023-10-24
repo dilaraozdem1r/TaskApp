@@ -3,15 +3,15 @@
     align-items: center;
     justify-content: center;
     height: 80%;
-    background-color: #2196f3;
-    color: white;
+    background-color: #F4D3D3;
+    color: black;
     padding: 10px;
     margin: 10px;
     width: 100%;
   }
   
   .todoItem:hover {
-    background-color: aqua;
+    background-color: #E8A9A9;
     transform: scale(1.05);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
   }

@@ -6,9 +6,10 @@ import axios from "axios";
 import Grid from "@mui/material/Grid";
 import TodoItem from "./todoItem";
 
+
 function TodoList() {
   const { state, dispatch } = useTodoContext();
-  const todosUrl = process.env.NEXT_PUBLIC_DATABASE_URL;
+  const todosUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
 
   useEffect(() => {
     console.log(todosUrl);
@@ -20,6 +21,8 @@ function TodoList() {
       .catch((err) => {
         console.log("Veriler alınırken bir hata oluştu:" + err.message);
       });
+
+
   }, [dispatch]);
 
     const handleDelete = (id) => {
@@ -27,6 +30,7 @@ function TodoList() {
       .delete(`${todosUrl}/${id}`)
       .then((response) => {
         dispatch({ type: "DELETE_TODO", payload: id });
+        
       })
       .catch((err) => {
         console.log("Silme işlemi sırasında bir hata oluştu:" + err.message);

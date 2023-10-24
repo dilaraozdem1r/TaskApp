@@ -10,6 +10,7 @@ export const useTodoContext=()=>{
 
 const initialState={
     todos:[],
+    subjects:["Work","Home","Personal","Shopping","School","Sports","Other"]
 };
 
 const todoReducer=(state,action)=>{
