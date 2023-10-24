@@ -1,0 +1,21 @@
+
+/* Header.module.css */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 10px;
+    margin: 1rem 5rem;
+  }
+  
+  .icon {
+    font-size: 36px;
+    margin-right: 10px;
+  }
+  
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": 2,
+      "title": "Yemek yap",
+      "completed": false
+    },
+    {
+      "id": 1,
+      "title": "Kitap oku",
+      "completed": false
+    }
+  ]
+}
