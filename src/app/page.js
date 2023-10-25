@@ -1,19 +1,19 @@
 import React from "react";
 import Header from "./components/header";
-import { TodoProvider } from "./context/context";
-import TodoList from "./components/todoList";
+import { TaskProvider } from "./context/context";
+import TaskList from "./components/taskList";
 import Navbar from "./components/navbar";
 
 export default function Home({}) {
   return (
-    <TodoProvider>
+    <TaskProvider>
       <div style={{ height: "100vh" }}>
         <Navbar />
         <Header />
         <main>
-          <TodoList />
+          <TaskList />
         </main>
       </div>
-    </TodoProvider>
+    </TaskProvider>
   );
 }

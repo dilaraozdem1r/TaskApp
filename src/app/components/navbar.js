@@ -15,22 +15,22 @@ function Navbar() {
 
   return (
     <AppBar position="absolute" style={{ backgroundColor: "#090580"}}>
-      <Toolbar>
+      <Toolbar  >
         <ListAltIcon />
-        <Typography variant="h6" style={{ marginRight: "15px" }}>
+        <Typography variant="h6" style={{ marginRight: "15px" , fontFamily: 'Montserrat'}}>
           TaskApp
         </Typography>
         <Link href="/">
-          <Button ><HomeIcon/></Button>
+          <Button style={{color:'white'}}><HomeIcon/></Button>
         </Link>
-        <Link href="/addItem">
+        <Link href="/addTask">
           {" "}
-          <Button> <AddTaskIcon/>Add Task</Button>
+          <Button style={{color:'white'}}> <AddTaskIcon/>Add Task</Button>
         </Link>
 
         <Link href="/taskStatistics">
           {" "}
-          <Button> <InsertChartIcon/>Task Statistics</Button>
+          <Button style={{color:'white'}}> <InsertChartIcon/>Task Statistics</Button>
         </Link>
       </Toolbar>
     </AppBar>

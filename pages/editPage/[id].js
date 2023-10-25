@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 import { Typography, TextField, Button } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import styles from "@/app/styles/Common.module.css";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Head from "next/head";
 
 function editPage() {
   const router = useRouter();
@@ -15,47 +16,57 @@ function editPage() {
   const [item, setItem] = useState({});
   const [updatedDescription, setUpdatedDescription] = useState("");
 
-  const todosUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
+  const tasksUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${todosUrl}/${id}`);
-        setItem(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
+    if (id) {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`${tasksUrl}/${id}`);
+          setItem(response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+      fetchData();
+    }
   }, [id]);
-
+  
   const handleUpdate = () => {
     axios
-      .put(`${todosUrl}/${id}`, { ...item, description: updatedDescription })
+      .put(`${tasksUrl}/${id}`, { ...item, description: updatedDescription })
       .then((res) => {
         console.log("To-Do güncellendi");
       })
       .catch((err) => {
         console.error(err);
       });
-      router.push("/");
+    router.push("/");
   };
 
   return (
     <div className={styles.container}>
       <Navbar />
+      <Head>
+          <title>Task App</title>
+        </Head>
       <main style={{ marginTop: "5rem" }}>
-      <button className={styles.buttonBack} onClick={() => router.push("/")}><ArrowBackIcon/></button>
+        <button className={styles.buttonBack} onClick={() => router.push("/")}>
+          <ArrowBackIcon />
+        </button>
         <Typography variant="h3">
           {" "}
           <EditIcon sx={{ fontSize: 40 }} /> To-Do Update
         </Typography>
         <form style={{ marginTop: "2rem" }}>
           <Typography variant="h6" color="#63707E">
+            Subject: {item.subject}
+          </Typography>
+          <Typography variant="h6" color="#63707E">
             Old Description: {item.description}
           </Typography>
-          <br/>
+          <br />
           <TextField
             name="description"
             label="New Description"

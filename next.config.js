@@ -4,6 +4,8 @@ const nextConfig = {
     experimental: {
         reactServer: false,
       },
+
+      
       
 }
 

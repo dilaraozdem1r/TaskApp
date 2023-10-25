@@ -227,3 +227,7 @@
     transform: rotate(0deg);
   }
 } */
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}

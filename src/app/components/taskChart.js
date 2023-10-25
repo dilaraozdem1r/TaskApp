@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useTodoContext } from "../context/context";
+import { useTaskContext } from "../context/context";
 import dynamic from "next/dynamic";
 import axios from "axios";
+import styles from "../styles/Common.module.css";
+
 
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 function TaskChart() {
-  const { state, dispatch } = useTodoContext();
-
+  const { state, dispatch } = useTaskContext();
+  const tasksUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
   const [taskCounts, setTaskCounts] = useState({});
   const [subjectCounts, setSubjectCounts] = useState({});
 
@@ -20,14 +22,14 @@ function TaskChart() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:4000/todos").then((response) => {
+    axios.get(tasksUrl).then((response) => {
       const newTaskCounts = {};
       const newSubjectCounts = {};
       const sortedData = response.data.sort((a, b) => new Date(a.createdOn) - new Date(b.createdOn));
 
 
-      sortedData.forEach((todo) => {
-        const { day, month } = getDayAndMonthFromDate(todo.createdOn);
+      sortedData.forEach((task) => {
+        const { day, month } = getDayAndMonthFromDate(task.createdOn);
         const key = `${day}.${month}`;
 
         if (newTaskCounts[key]) {
@@ -36,7 +38,7 @@ function TaskChart() {
           newTaskCounts[key] = 1;
         }
 
-        const subject = todo.subject;
+        const subject = task.subject;
         if (newSubjectCounts[subject]) {
           newSubjectCounts[subject] += 1;
         } else {
@@ -53,7 +55,6 @@ function TaskChart() {
     options: {
       chart: {
         id: "line-chart",
-        background: "#f0f0f0"
       },
       xaxis: {
         categories: Object.keys(taskCounts),
@@ -90,14 +91,13 @@ function TaskChart() {
     options: {
       chart: {
         type: "donut",
-        background: "#f0f0f0",
       },
       labels: state.subjects,
       title: {
         text: "Tasks by Subject",
         align: "center",
-        margin:100,
-        offsetY: 10,
+        margin:60,
+        offsetY: 20,
         style: {
           fontSize: "25px",
         },
@@ -107,25 +107,25 @@ function TaskChart() {
   };
 
   return (
-    <div style={{ marginTop: "8rem", display: "flex" }}>
-      <div style={{marginLeft:'9rem'}}>
+    <div className={styles.container} >
+      <div style={{marginLeft:'1rem', marginTop:'8rem'}}>
         <main>
           <Chart
             options={lineChartData.options}
             series={lineChartData.series}
             type="line"
-            height={500}
+            height={350}
             width={500}
           />
         </main>
       </div>
-      <div style={{marginLeft:'9rem'}}>
+      <div style={{marginLeft:'8rem', marginTop:'7rem'}}>
         <main>
           <Chart
             options={donutChartData.options}
             series={donutChartData.series}
             type="donut"
-            height={500}
+            height={350}
             width={500}
           />
         </main>

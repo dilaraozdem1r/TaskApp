@@ -1,22 +1,21 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useTodoContext } from "../context/context";
+import { useTaskContext } from "../context/context";
 import axios from "axios";
 import Grid from "@mui/material/Grid";
-import TodoItem from "./todoItem";
+import TaskItem from "./taskItem";
 import { Pagination } from "@mui/material";
-import Stack from "@mui/material/Stack";
 
-function TodoList() {
-  const { state, dispatch } = useTodoContext();
-  const todosUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
+function TaskList() {
+  const { state, dispatch } = useTaskContext();
+  const tasksUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
 
   useEffect(() => {
-    console.log(todosUrl);
+  
     axios
-      .get(todosUrl)
+      .get(tasksUrl)
       .then((response) => {
-        dispatch({ type: "GET_TODOS", payload: response.data });
+        dispatch({ type: "GET_TASKS", payload: response.data });
       })
       .catch((err) => {
         console.log("Veriler alınırken bir hata oluştu:" + err.message);
@@ -25,9 +24,9 @@ function TodoList() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`${todosUrl}/${id}`)
+      .delete(`${tasksUrl}/${id}`)
       .then((response) => {
-        dispatch({ type: "DELETE_TODO", payload: id });
+        dispatch({ type: "DELETE_TASK", payload: id });
       })
       .catch((err) => {
         console.log("Silme işlemi sırasında bir hata oluştu:" + err.message);
@@ -35,11 +34,11 @@ function TodoList() {
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 7;
 
-  const indexOfLastTodo = currentPage * itemsPerPage;
-  const indexOfFirstTodo = indexOfLastTodo - itemsPerPage;
-  const displayedTodos = state.todos.slice(indexOfFirstTodo, indexOfLastTodo);
+  const indexOfLastTask = currentPage * itemsPerPage;
+  const indexOfFirstTask = indexOfLastTask - itemsPerPage;
+  const displayedTasks = state.tasks.slice(indexOfFirstTask, indexOfLastTask);
 
   const handlePageChange = (event, page) => {
     setCurrentPage(page);
@@ -56,15 +55,15 @@ function TodoList() {
           justifyContent: "center",
         }}
       >
-        {displayedTodos.map((todo) => (
-          <Grid item xs={6} md={8}>
-            <TodoItem key={todo.id} todo={todo} onDelete={handleDelete} />
+        {displayedTasks.map((task) => (
+          <Grid item xs={6} md={8} key={task.id} >
+            <TaskItem key={task.id} task={task} onDelete={handleDelete} />
           </Grid>
         ))}
       </Grid>
       <div style={{ position: 'fixed', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
     <Pagination
-      count={Math.ceil(state.todos.length / itemsPerPage)}
+      count={Math.ceil(state.tasks.length / itemsPerPage)}
       page={currentPage}
       onChange={handlePageChange}
     />
@@ -73,4 +72,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;
+export default TaskList;

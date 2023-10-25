@@ -2,45 +2,45 @@
 
 import React, {createContext,useContext,useReducer} from 'react';
 
-const TodoContext = createContext();
+const TaskContext = createContext();
 
-export const useTodoContext=()=>{
-    return useContext(TodoContext);
+export const useTaskContext=()=>{
+    return useContext(TaskContext);
 };
 
 const initialState={
-    todos:[],
+    tasks:[],
     subjects:["Work","Home","Personal","Shopping","School","Sports","Other"]
 };
 
-const todoReducer=(state,action)=>{
+const taskReducer=(state,action)=>{
     switch(action.type){
-        case 'ADD_TODO':
+        case 'ADD_TASK':
             return{
                 ...state,
-                todos:[...state.todos,action.payload],
+                tasks:[...state.tasks,action.payload],
             }
-        case 'GET_TODOS':
+        case 'GET_TASKS':
             return{
                 ...state,
-                todos:action.payload,
+                tasks:action.payload,
             }
-        case 'DELETE_TODO':
+        case 'DELETE_TASK':
             return{
                 ...state,
-                todos:state.todos.filter((todo)=>todo.id!==action.payload),
+                tasks:state.tasks.filter((task)=>task.id!==action.payload),
             }
         default:
             return state;
     }
 }
 
-export const TodoProvider=({children})=>{
-    const [state,dispatch]=useReducer(todoReducer,initialState);
+export const TaskProvider=({children})=>{
+    const [state,dispatch]=useReducer(taskReducer,initialState);
 
     return (
-        <TodoContext.Provider value={{state,dispatch}}>
+        <TaskContext.Provider value={{state,dispatch}}>
             {children}
-        </TodoContext.Provider>
+        </TaskContext.Provider>
     )
 }

@@ -1,20 +1,23 @@
+"use client";
 import React from "react";
 import { TaskProvider } from "@/app/context/context";
+import AddTaskItem from "@/app/components/addTaskItem";
 import Navbar from "@/app/components/navbar";
-import TaskChart from "@/app/components/taskChart";
 import Head from "next/head";
 
 
-export default function taskStatistics() {
+function AddItemPage() {
   return (
     <TaskProvider>
-      <div style={{ height: "100vh"}}>
+      <Navbar />
       <Head>
           <title>Task App</title>
         </Head>
-        <Navbar />
-        <TaskChart />
+      <div style={{ height: "100vh" }} >
+        <AddTaskItem />
       </div>
     </TaskProvider>
   );
 }
+
+export default AddItemPage;

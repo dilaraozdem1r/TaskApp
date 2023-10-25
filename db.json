@@ -1,5 +1,5 @@
 {
-  "todos": [
+  "tasks": [
     {
       "subject": "Work",
       "description": "Prepare project presentation",
@@ -44,7 +44,7 @@
     {
       "subject": "Sports",
       "description": "Run 5 miles",
-      "isCompleted": false,
+      "isCompleted": true,
       "createdOn": "2023-10-25T11:11:23.957Z",
       "id": 20
     },
@@ -72,7 +72,7 @@
     {
       "subject": "Home",
       "description": "Pay utility bills",
-      "isCompleted": false,
+      "isCompleted": true,
       "createdOn": "2023-10-27T11:11:23.957Z",
       "id": 12
     },
@@ -86,7 +86,7 @@
     {
       "subject": "Home",
       "description": "Mow the lawn",
-      "isCompleted": false,
+      "isCompleted": true,
       "createdOn": "2023-10-27T11:11:23.957Z",
       "id": 14
     },
@@ -94,15 +94,15 @@
       "subject": "Work",
       "description": "Prepare project presentation",
       "isCompleted": false,
-      "createdOn": "2023-10-25T11:11:23.957Z",
-      "id": 14
+      "createdOn": "2023-10-28T11:11:23.957Z",
+      "id": 20
     },
     {
       "subject": "Other",
       "description": "Attend a social event",
       "isCompleted": false,
       "createdOn": "2023-10-22T11:11:23.957Z",
-      "id": 14
+      "id": 11
     },
     {
       "subject": "Personal",
@@ -119,20 +119,6 @@
       "id": 7
     },
     {
-      "subject": "Other",
-      "description": "bbb",
-      "isCompleted": false,
-      "createdOn": "2023-10-25T17:24:27.805Z",
-      "id": 33
-    },
-    {
-      "subject": "School",
-      "description": "write code",
-      "isCompleted": false,
-      "createdOn": "2023-10-25T17:47:03.769Z",
-      "id": 34
-    },
-    {
       "subject": "School",
       "description": "write code",
       "isCompleted": false,
@@ -140,25 +126,18 @@
       "id": 35
     },
     {
-      "subject": "Shopping",
-      "description": "bbbbbbbbbbbbbb",
+      "subject": "School",
+      "description": "solve problems",
       "isCompleted": false,
-      "createdOn": "2023-10-25T17:47:46.404Z",
-      "id": 36
-    },
-    {
-      "subject": "Shopping",
-      "description": "bbbbbbbbbbbbbb",
-      "isCompleted": false,
-      "createdOn": "2023-10-25T17:47:55.103Z",
-      "id": 37
+      "createdOn": "2023-10-23T18:13:47.612Z",
+      "id": 39
     },
     {
       "subject": "School",
-      "description": "ccccccccccc",
+      "description": "test çöz",
       "isCompleted": false,
-      "createdOn": "2023-10-25T17:48:00.680Z",
-      "id": 38
+      "createdOn": "2023-10-25T19:53:52.336Z",
+      "id": 40
     }
   ]
 }
