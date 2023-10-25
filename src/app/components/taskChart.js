@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTodoContext } from "../context/context";
 import dynamic from "next/dynamic";
 import axios from "axios";
-import styles from "../styles/Chart.module.css";
+
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -53,6 +53,7 @@ function TaskChart() {
     options: {
       chart: {
         id: "line-chart",
+        background: "#f0f0f0"
       },
       xaxis: {
         categories: Object.keys(taskCounts),
@@ -89,13 +90,14 @@ function TaskChart() {
     options: {
       chart: {
         type: "donut",
+        background: "#f0f0f0",
       },
       labels: state.subjects,
       title: {
         text: "Tasks by Subject",
         align: "center",
-        margin: 60,
-        offsetY: 20,
+        margin:100,
+        offsetY: 10,
         style: {
           fontSize: "25px",
         },
@@ -106,7 +108,7 @@ function TaskChart() {
 
   return (
     <div style={{ marginTop: "8rem", display: "flex" }}>
-      <div className={styles.chartContainer}>
+      <div style={{marginLeft:'9rem'}}>
         <main>
           <Chart
             options={lineChartData.options}
@@ -117,7 +119,7 @@ function TaskChart() {
           />
         </main>
       </div>
-      <div className={styles.chartContainer}>
+      <div style={{marginLeft:'9rem'}}>
         <main>
           <Chart
             options={donutChartData.options}

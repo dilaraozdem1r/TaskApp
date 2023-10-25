@@ -1,16 +1,15 @@
 {
   "todos": [
     {
-      "subject": "Home",
-      "description": "walk the dog",
+      "subject": "Work",
+      "description": "Prepare project presentation",
       "isCompleted": false,
-      "createdOn": "2023-10-26T11:11:23.957Z",
       "id": 15
     },
     {
       "subject": "Home",
       "description": "Organize the pantry",
-      "isCompleted": false,
+      "isCompleted": true,
       "createdOn": "2023-09-26T11:11:23.957Z",
       "id": 16
     },
@@ -24,7 +23,7 @@
     {
       "subject": "Personal",
       "description": "Meditate for 30 minutes",
-      "isCompleted": false,
+      "isCompleted": true,
       "createdOn": "2023-10-24T11:11:23.957Z",
       "id": 32
     },
@@ -118,6 +117,48 @@
       "isCompleted": false,
       "createdOn": "2023-10-25T11:11:23.957Z",
       "id": 7
+    },
+    {
+      "subject": "Other",
+      "description": "bbb",
+      "isCompleted": false,
+      "createdOn": "2023-10-25T17:24:27.805Z",
+      "id": 33
+    },
+    {
+      "subject": "School",
+      "description": "write code",
+      "isCompleted": false,
+      "createdOn": "2023-10-25T17:47:03.769Z",
+      "id": 34
+    },
+    {
+      "subject": "School",
+      "description": "write code",
+      "isCompleted": false,
+      "createdOn": "2023-10-25T17:47:26.907Z",
+      "id": 35
+    },
+    {
+      "subject": "Shopping",
+      "description": "bbbbbbbbbbbbbb",
+      "isCompleted": false,
+      "createdOn": "2023-10-25T17:47:46.404Z",
+      "id": 36
+    },
+    {
+      "subject": "Shopping",
+      "description": "bbbbbbbbbbbbbb",
+      "isCompleted": false,
+      "createdOn": "2023-10-25T17:47:55.103Z",
+      "id": 37
+    },
+    {
+      "subject": "School",
+      "description": "ccccccccccc",
+      "isCompleted": false,
+      "createdOn": "2023-10-25T17:48:00.680Z",
+      "id": 38
     }
   ]
 }

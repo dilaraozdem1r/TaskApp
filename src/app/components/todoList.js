@@ -35,7 +35,7 @@ function TodoList() {
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
 
   const indexOfLastTodo = currentPage * itemsPerPage;
   const indexOfFirstTodo = indexOfLastTodo - itemsPerPage;
