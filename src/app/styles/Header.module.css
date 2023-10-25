@@ -1,20 +1,18 @@
-
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    padding: 10px;
-    margin: 5rem 2rem;
-  }
-  
-  .icon {
-    font-size: 36px;
-    margin-right: 10px;
-  }
-  
-  .title {
-    font-size: 30px;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 10px;
+  margin: 5rem 2rem 3rem 2rem;
+}
+
+.icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}

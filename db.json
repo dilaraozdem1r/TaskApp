@@ -1,34 +1,16 @@
 {
   "todos": [
     {
-      "subject": "Personal",
-      "description": "uuuu",
+      "subject": "Sports",
+      "description": "eeeeeeeeeeeeeeeeeeeee",
       "isCompleted": false,
-      "id": 4
+      "id": 9
     },
     {
       "subject": "Personal",
-      "description": "ee",
+      "description": "dilara özdemir",
       "isCompleted": false,
-      "id": 5
-    },
-    {
-      "subject": "Home",
-      "description": "rrrr",
-      "isCompleted": false,
-      "id": 6
-    },
-    {
-      "subject": "School",
-      "description": "uuu",
-      "isCompleted": false,
-      "id": 7
-    },
-    {
-      "subject": "Shopping",
-      "description": "alışveriş",
-      "isCompleted": false,
-      "id": 8
+      "id": 10
     }
   ]
 }

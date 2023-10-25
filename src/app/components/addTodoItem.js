@@ -11,7 +11,7 @@ import AddTaskIcon from "@mui/icons-material/AddTask";
 import Grid from "@mui/material/Grid";
 import { useTodoContext, TodoProvider } from "@/app/context/context";
 import axios from "axios";
-import styles from "../styles/AddTodoItem.module.css";
+import styles from "../styles/Common.module.css";
 import { useRouter } from "next/router";
 
 export default function addTodoItem() {

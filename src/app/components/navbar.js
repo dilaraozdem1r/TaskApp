@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import Link from "next/link";
+import AddTaskIcon from "@mui/icons-material/AddTask";
 
 function Navbar() {
 
@@ -23,7 +24,7 @@ function Navbar() {
 
         <Link href="/addItem">
           {" "}
-          <Button >Add Item</Button>
+          <Button> <AddTaskIcon/>Add Task</Button>
         </Link>
       </Toolbar>
     </AppBar>

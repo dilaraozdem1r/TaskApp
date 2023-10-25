@@ -6,7 +6,7 @@
     background-color: #F4D3D3;
     color: black;
     padding: 10px;
-    margin: 10px;
+    margin: 7px;
     width: 100%;
   }
   
@@ -20,6 +20,14 @@
     margin-left: auto;
     cursor: pointer;
     color: red;
+    font-size: 24px;
+  }
+
+  .editIcon {
+    margin-left: 0;
+    margin-right: auto;
+    cursor: pointer;
+    color: #090580;
     font-size: 24px;
   }
   
