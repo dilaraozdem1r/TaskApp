@@ -8,8 +8,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import Link from "next/link";
 
 function TodoItem({ todo, onDelete }) {
-
-  
   return (
     <div>
     <Paper elevation={3} className={styles.todoItem}>

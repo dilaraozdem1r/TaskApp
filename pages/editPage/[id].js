@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { Typography, TextField, Button } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import styles from "@/app/styles/Common.module.css";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function editPage() {
   const router = useRouter();
@@ -44,7 +45,8 @@ function editPage() {
   return (
     <div className={styles.container}>
       <Navbar />
-      <main style={{ marginTop: "10rem" }}>
+      <main style={{ marginTop: "5rem" }}>
+      <button className={styles.buttonBack} onClick={() => router.push("/")}><ArrowBackIcon/></button>
         <Typography variant="h3">
           {" "}
           <EditIcon sx={{ fontSize: 40 }} /> To-Do Update

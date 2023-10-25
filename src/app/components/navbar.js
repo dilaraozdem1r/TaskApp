@@ -7,6 +7,8 @@ import Button from "@mui/material/Button";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import Link from "next/link";
 import AddTaskIcon from "@mui/icons-material/AddTask";
+import InsertChartIcon from '@mui/icons-material/InsertChart';
+import HomeIcon from '@mui/icons-material/Home';
 
 function Navbar() {
 
@@ -16,15 +18,19 @@ function Navbar() {
       <Toolbar>
         <ListAltIcon />
         <Typography variant="h6" style={{ marginRight: "15px" }}>
-          TO_DO_APP
+          TaskApp
         </Typography>
         <Link href="/">
-          <Button >Home Page</Button>
+          <Button ><HomeIcon/></Button>
         </Link>
-
         <Link href="/addItem">
           {" "}
           <Button> <AddTaskIcon/>Add Task</Button>
+        </Link>
+
+        <Link href="/taskStatistics">
+          {" "}
+          <Button> <InsertChartIcon/>Task Statistics</Button>
         </Link>
       </Toolbar>
     </AppBar>

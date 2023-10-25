@@ -37,13 +37,13 @@ export default function addTodoItem() {
       subject: todoData.subject,
       description: todoData.description,
       isCompleted: false,
+      createdOn: new Date().toISOString(),
     };
 
     axios
       .post(todosUrl, data)
       .then((response) => {
         dispatch({ type: "ADD_TODO", payload: response.data });
-
         setTodoData({
           subject: "",
           description: "",
