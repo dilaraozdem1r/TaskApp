@@ -1,5 +1,12 @@
-This project is a React application built with Next.js that demonstrates the usage of various React hooks (useState, useEffect, useContext, etc.) to perform CRUD (Create, Read, Update, Delete) operations. It also incorporates a fake API using JSON Server and includes the creation of charts with React ApexCharts based on the fetched data.
+# Task Manager Application(Built with Next.js)
 
+## Features
+
+- Create new tasks.
+- Delete existing tasks.
+- Update task details.
+- View statistical information about tasks.
+- Mark tasks as completed or not completed.
 
 ## Getting Started
 
