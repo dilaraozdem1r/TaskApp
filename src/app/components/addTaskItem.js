@@ -61,7 +61,7 @@ function addTaskItem() {
         <main style={{ marginTop: "10rem" }}>
           <Typography variant="h3">
             {" "}
-            <AddTaskIcon sx={{ fontSize: 40 }} /> Add To Do Item
+            <AddTaskIcon sx={{ fontSize: 40 }} /> Add Task Item
           </Typography>
           <form style={{ marginTop: "2rem" }} className={styles.form}>
             <Typography color="#FF5722">Please choose a subject</Typography>
@@ -100,7 +100,7 @@ function addTaskItem() {
             onClick={handleSave}
             disabled={!taskData.subject || !taskData.description}
           >
-            Add to do
+            Add task
           </Button>
         </main>
       </div>

@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import Checkbox from "@mui/material/Checkbox";
 import styles from "../styles/TaskItem.module.css";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from '@mui/icons-material/Edit';
+import EditIcon from "@mui/icons-material/Edit";
 import Link from "next/link";
 import axios from "axios";
 
@@ -14,15 +14,21 @@ function TaskItem({ task, onDelete }) {
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
-    axios.put(`${tasksUrl}/${task.id}`, { ...task,isCompleted: !isChecked })
-  }
+    axios.put(`${tasksUrl}/${task.id}`, { ...task, isCompleted: !isChecked });
+  };
 
   return (
     <div>
-      <Paper elevation={3} className={styles.taskItem} style={{ height: '40px' }}>
-        <Link href={`/editPage/${task.id}`} className={styles.editIcon}><EditIcon/></Link>
+      <Paper
+        elevation={3}
+        className={styles.taskItem}
+        style={{ height: "40px" }}
+      >
+        <Link href={`/editPage/${task.id}`} className={styles.editIcon}>
+          <EditIcon />
+        </Link>
         <Checkbox
-        className={styles.checkboxIcon}
+          className={styles.checkboxIcon}
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
@@ -32,7 +38,10 @@ function TaskItem({ task, onDelete }) {
         >
           {task.description}
         </Typography>
-        <DeleteIcon onClick={() => onDelete(task.id)} className={styles.deleteIcon} />
+        <DeleteIcon
+          onClick={() => onDelete(task.id)}
+          className={styles.deleteIcon}
+        />
       </Paper>
     </div>
   );

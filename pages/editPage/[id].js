@@ -28,11 +28,11 @@ function editPage() {
           console.error(error);
         }
       };
-  
+
       fetchData();
     }
   }, [id]);
-  
+
   const handleUpdate = () => {
     axios
       .put(`${tasksUrl}/${id}`, { ...item, description: updatedDescription })
@@ -49,15 +49,15 @@ function editPage() {
     <div className={styles.container}>
       <Navbar />
       <Head>
-          <title>Task App</title>
-        </Head>
+        <title>Task App</title>
+      </Head>
       <main style={{ marginTop: "5rem" }}>
         <button className={styles.buttonBack} onClick={() => router.push("/")}>
           <ArrowBackIcon />
         </button>
         <Typography variant="h3">
           {" "}
-          <EditIcon sx={{ fontSize: 40 }} /> To-Do Update
+          <EditIcon sx={{ fontSize: 40 }} /> Task Update
         </Typography>
         <form style={{ marginTop: "2rem" }}>
           <Typography variant="h6" color="#63707E">

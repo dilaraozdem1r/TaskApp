@@ -11,7 +11,6 @@ function TaskList() {
   const tasksUrl = process.env.NEXT_PUBLIC_JSON_SERVER_URL;
 
   useEffect(() => {
-  
     axios
       .get(tasksUrl)
       .then((response) => {
@@ -56,18 +55,25 @@ function TaskList() {
         }}
       >
         {displayedTasks.map((task) => (
-          <Grid item xs={6} md={8} key={task.id} >
+          <Grid item xs={6} md={8} key={task.id}>
             <TaskItem key={task.id} task={task} onDelete={handleDelete} />
           </Grid>
         ))}
       </Grid>
-      <div style={{ position: 'fixed', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
-    <Pagination
-      count={Math.ceil(state.tasks.length / itemsPerPage)}
-      page={currentPage}
-      onChange={handlePageChange}
-    />
-  </div>
+      <div
+        style={{
+          position: "fixed",
+          bottom: "10px",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <Pagination
+          count={Math.ceil(state.tasks.length / itemsPerPage)}
+          page={currentPage}
+          onChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 }

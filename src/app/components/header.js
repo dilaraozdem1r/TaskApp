@@ -1,10 +1,11 @@
-import ChecklistIcon from '@mui/icons-material/Checklist';
-import styles from '../styles/Header.module.css';
+import ChecklistIcon from "@mui/icons-material/Checklist";
+import styles from "../styles/Header.module.css";
 
 export default function Header() {
-    return (
-        <header className={styles.header}>
-        <ChecklistIcon className={styles.icon} /><p className={styles.title}>TASK LIST</p>
-        </header>
-    );
+  return (
+    <header className={styles.header}>
+      <ChecklistIcon className={styles.icon} />
+      <p className={styles.title}>TASK LIST</p>
+    </header>
+  );
 }

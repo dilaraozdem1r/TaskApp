@@ -3,8 +3,8 @@ import { useTaskContext } from "../context/context";
 import dynamic from "next/dynamic";
 import axios from "axios";
 import styles from "../styles/Common.module.css";
-
-
+import InsertChartIcon from "@mui/icons-material/InsertChart";
+import Typography from "@mui/material/Typography";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -25,8 +25,9 @@ function TaskChart() {
     axios.get(tasksUrl).then((response) => {
       const newTaskCounts = {};
       const newSubjectCounts = {};
-      const sortedData = response.data.sort((a, b) => new Date(a.createdOn) - new Date(b.createdOn));
-
+      const sortedData = response.data.sort(
+        (a, b) => new Date(a.createdOn) - new Date(b.createdOn)
+      );
 
       sortedData.forEach((task) => {
         const { day, month } = getDayAndMonthFromDate(task.createdOn);
@@ -65,9 +66,9 @@ function TaskChart() {
         },
       },
       title: {
-        text: "Number of Tasks Per Day",
+        text: "Count of Tasks Per Day",
         align: "center",
-        margin:60,
+        margin: 60,
         offsetY: 20,
         style: {
           fontSize: "25px",
@@ -75,8 +76,8 @@ function TaskChart() {
       },
       stroke: {
         curve: "smooth",
-        width: 3, 
-        colors: ["#EB455F"], 
+        width: 3,
+        colors: ["#EB455F"],
       },
     },
     series: [
@@ -96,7 +97,7 @@ function TaskChart() {
       title: {
         text: "Tasks by Subject",
         align: "center",
-        margin:60,
+        margin: 60,
         offsetY: 20,
         style: {
           fontSize: "25px",
@@ -107,8 +108,11 @@ function TaskChart() {
   };
 
   return (
-    <div className={styles.container} >
-      <div style={{marginLeft:'1rem', marginTop:'8rem'}}>
+    <div className={styles.container}>
+      <div style={{ marginLeft: "1rem", marginTop: "6rem" }}>
+      <Typography variant="h5" style={{marginBottom:'3rem'}}>
+          <InsertChartIcon sx={{ fontSize: 20 }} /> Task Statistics
+        </Typography>
         <main>
           <Chart
             options={lineChartData.options}
@@ -119,7 +123,7 @@ function TaskChart() {
           />
         </main>
       </div>
-      <div style={{marginLeft:'8rem', marginTop:'7rem'}}>
+      <div style={{ marginLeft: "8rem", marginTop: "7rem" }}>
         <main>
           <Chart
             options={donutChartData.options}
